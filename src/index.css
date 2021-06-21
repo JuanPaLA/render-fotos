@@ -7,7 +7,94 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color:indigo;
+  padding: 10px;
 }
+
+#grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#header-wrapper {
+  grid-column:1/4;
+}
+
+#foto-wrapper {
+  grid-column:1/3;
+  grid-row: 2/6;
+}
+
+#video-wrapper {
+  grid-column:3/3;
+  grid-row: 4/6;
+}
+
+#tiempo-wrapper{
+  grid-column:3/3;
+  grid-row: 2/4;
+}
+
+#stop-watch{
+  display: flex;
+  justify-content: space-around;
+}
+
+#texto-wrapper{
+  grid-column:1/4;
+}
+
+#slide-right {
+  width: 100%;
+  overflow: hidden;
+  margin-left: 400px;
+  max-width: 500px
+}
+
+#slide-right h4 {
+  animation: 2s slide-right;
+  animation-delay: 2s;
+}
+
+@keyframes slide-right {
+   from {
+      margin-left: -500px;
+   }
+
+   to {
+      margin-left: 0%;
+   }
+}
+
+/* #header {
+  grid-area: header;
+  border: 1px solid black;
+}
+
+#foto {
+  grid-area: foto;
+  border: 1px solid black;
+}
+
+#tiempo {
+  grid-area: tiempo;
+}
+
+#zocalo{
+  grid-area: zocalo;
+}
+
+.grid-container {
+  display: grid;
+  
+  grid-template-areas: 'header header header header header header'
+    'foto foto'
+  ;
+} */
