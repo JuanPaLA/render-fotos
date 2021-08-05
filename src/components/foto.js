@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import '../index.css';
 
 export default function Foto({src, id}){
+    const [ID, setId] = useState(id+2)
     useEffect(() => {
         
     }, [src])
