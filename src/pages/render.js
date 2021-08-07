@@ -49,7 +49,7 @@ function interval() {
       }else{
         console.log('line', id);
         setPaleta(fotos[id].hue)
-        document.getElementById('grid-container').style.backgroundColor = `${paleta}`
+        // document.getElementById('grid-container').style.backgroundColor = `${paleta}`
         setId(id+1)
       }    
     },time)
