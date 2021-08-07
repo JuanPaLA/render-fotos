@@ -1,15 +1,17 @@
 import React,{useState, useEffect} from 'react';
 import '../App.css';
 import '../index.css';
+import Content from '../components/landingcontent';
 import { Jumbotron, Container } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 export default function Landing(props){
-    const urlPic = '../assets/3.png'
+    
     return(
         <div id="main">
                 <img src="../assets/10.png"/>
             <div>
-                <h1>coso</h1>
+                <Content/>
             </div>
         </div>
     )

@@ -1,11 +1,11 @@
-import React,{useState, useEffect} from 'react';
-import './App.css';
-import './index.css';
+import React,{useState, useEffect, useContext} from 'react';
+import '../App.css';
+import '../index.css';
 import Foto from '../components/foto';
 import Video from '../components/video';
 import Zocalo from '../components/zocalo';
 import Tiempo from '../components/tiempo';
-import Header from '../components/header';
+import {TimeContext} from '../context/context';
 
 function FotoRender() {
 const [fotos, setFotos] = useState([
@@ -38,6 +38,7 @@ const [id, setId] = useState(0)
 const [src, setSrc] = useState()
 const [texto, setTexto] = useState()
 const [paleta, setPaleta] = useState() 
+const [,,time] = useContext(TimeContext)
 
 function interval() {
     setTimeout(()=>{
@@ -51,10 +52,11 @@ function interval() {
         document.getElementById('grid-container').style.backgroundColor = `${paleta}`
         setId(id+1)
       }    
-    },4000)
+    },time)
 }
 
 useEffect(() => {
+  // alert(time)
     console.log(id, ' l => ', fotos.length)
     interval()
     return () => clearInterval(interval);
@@ -63,12 +65,9 @@ useEffect(() => {
   return (
     <div id="grid-container">
       
-      {/* <div id="header-wrapper">
-        <Header/>
-      </div> */}
-      
       <div id="foto-wrapper">
         <Foto src={src} id={id}/>
+        
       </div>
 
       <div id="tiempo-wrapper">

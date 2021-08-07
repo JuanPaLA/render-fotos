@@ -8,8 +8,9 @@ export default function Foto({src, id}){
     }, [src])
 
     return(
-        <div id="foto">
-            <img id="pic" src={`/assets/${id}.png`} height="50%" width="100%"/>
+        <div class="layered-image">
+            <img src={`/assets/${id}.png`} height="50%" width="100%"/>
+            <img class="image-overlay" src={`/assets/${id}.png`} height="50%" width="100%"/>
         </div>
     )
 }
