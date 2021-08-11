@@ -7,7 +7,7 @@ export default function Zocalo({texto}){
     }, [texto])
     return(
         <div id="slide-right">
-            <h4>{texto}</h4>
+            {texto}
         </div>
     )
 }

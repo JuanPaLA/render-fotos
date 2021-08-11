@@ -44,11 +44,13 @@ function interval() {
     setTimeout(()=>{
       if(id == 23){
         setPaleta(fotos[id].hue)
-        document.getElementById('grid-container').style.backgroundColor = `${paleta}`
+        // document.getElementById('grid-container').style.backgroundColor = `${paleta}`
         setId(0)
+        setTexto(fotos[id].texto)
       }else{
         console.log('line', id);
         setPaleta(fotos[id].hue)
+        setTexto(fotos[id].texto)
         // document.getElementById('grid-container').style.backgroundColor = `${paleta}`
         setId(id+1)
       }    
@@ -67,7 +69,6 @@ useEffect(() => {
       
       <div id="foto-wrapper">
         <Foto src={src} id={id}/>
-        
       </div>
 
       <div id="tiempo-wrapper">
