@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export const TimeContext = React.createContext([]);
 
 function TimeContextProvider (props) {
-    const [time,setTime] = useState(7000);
+    const [time,setTime] = useState(60000);
     const [tiempo,setTiempo] = useState(0);
     const [pausa, setPausa] = useState(false)
 
