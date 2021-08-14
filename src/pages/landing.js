@@ -2,14 +2,13 @@ import React,{useState, useEffect} from 'react';
 import '../App.css';
 import '../index.css';
 import Content from '../components/landingcontent';
-import { Jumbotron, Container } from 'reactstrap';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
-export default function Landing(props){
+
+export default function Landing(){
     
     return(
         <div id="main">
-                <img src="../assets/10.png"/>
+                <img src="assets/home.png" width="100%"/>
             <div>
                 <Content/>
             </div>

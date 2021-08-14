@@ -1,12 +1,34 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useContext, useEffect} from 'react';
 import '../index.css';
+import {TimeContext} from '../context/context'
 
 export default function Zocalo({texto}){
+    
+    const [fadeProp, setFadeProp] = useState({
+        fade: 'fade-in'
+    })
+
+    const [addTime,lessTime,time, pausa, pauser, tiempo, timer] = useContext(TimeContext);
+    
     useEffect(() => {
-        console.log(texto);
-    }, [texto])
+        const timeout = setInterval(() => {
+           if (fadeProp.fade === 'fade-in') {
+              setFadeProp({
+                   fade: 'fade-out'
+              })
+           } else {
+                setFadeProp({
+                   fade: 'fade-in'
+                })
+           }
+        }, time);
+   return () => clearInterval(timeout)
+   }, [fadeProp])
+
+    
+
     return(
-        <div id="slide-right">
+        <div className={fadeProp.fade}>
             {texto}
         </div>
     )

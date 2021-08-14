@@ -5,7 +5,8 @@ export const TimeContext = React.createContext([]);
 
 function TimeContextProvider (props) {
     const [time,setTime] = useState(4000);
-    const [tiempo, setTiempo] = useState(0)
+    const [tiempo,setTiempo] = useState(0);
+    const [pausa, setPausa] = useState(false)
 
     function addTime(a){
         setTime(time+a)
@@ -14,22 +15,24 @@ function TimeContextProvider (props) {
     function lessTime(a){
         setTime(time+a)
     }
-
-    function startTiempo() {
-        setTiempo(tiempo + 1000) 
-    }
-
-    function timer() {
-        setInterval(startTiempo, 1000);
-    }
  
+    function pauser(){
+        setPausa(!pausa)
+    }
+
+    function timer(){
+       setTiempo(tiempo + 1000) 
+    }
 
     useEffect(()=>{
         console.log(time);
+        if (time < 1000){
+            setTime(1000)
+        }
     },[time])
 
     return(
-        <TimeContext.Provider value={[addTime, lessTime, time, tiempo, startTiempo,timer]}>
+        <TimeContext.Provider value={[addTime, lessTime, time, pausa, pauser, tiempo, timer]}>
             {props.children}
         </TimeContext.Provider>
     )

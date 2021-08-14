@@ -1,6 +1,7 @@
 import React,{useState, useEffect, useContext} from 'react';
 import '../index.css';
 import {TimeContext} from '../context/context';
+import Home from '../assets/home.png';
 
 export default function Foto({src, id}){
     const [,,time] = useContext(TimeContext)
@@ -16,9 +17,8 @@ export default function Foto({src, id}){
     // }
 
     return(
-        <div class="layered-image">
-            <img src={`/assets/${id}.png`} height="50%" width="100%"/>
-            {/* <img class="image-overlay" src={`/assets/${id}.png`} height="50%" width="100%"/> */}
+        <div className="layered-image">
+            <img src={(`../assets/id${id}.png`)} height="50%" width="90%"/>
         </div>
     )
 }
