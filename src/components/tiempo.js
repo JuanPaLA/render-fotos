@@ -41,7 +41,7 @@ export default function Tiempo(){
           <div id="unit">
             <div>
               {/* <span>{time}</span> */}
-              {( '' + Math.floor((time / 1000) % 60)).slice(-2)}s
+              {( '' + Math.floor((time / 1000) % 600)).slice(-2)}s
             </div>
             <div id="timer-text">
               Unidad de tiempo
