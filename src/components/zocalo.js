@@ -7,7 +7,7 @@ export default function Zocalo(props){
     
     const [fadeProp, setFadeProp] = useState({fade: 'fade-in'})
     useEffect(()=>{
-        alert(props.texto);
+        // alert(props.texto);
     },[])
 
     function setIn(){
