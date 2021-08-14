@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export const TimeContext = React.createContext([]);
 
 function TimeContextProvider (props) {
-    const [time,setTime] = useState(4000);
+    const [time,setTime] = useState(7000);
     const [tiempo,setTiempo] = useState(0);
     const [pausa, setPausa] = useState(false)
 
@@ -26,8 +26,8 @@ function TimeContextProvider (props) {
 
     useEffect(()=>{
         console.log(time);
-        if (time < 1000){
-            setTime(1000)
+        if (time < 7000){
+            setTime(7000)
         }
     },[time])
 
