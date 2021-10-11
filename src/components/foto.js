@@ -1,24 +1,34 @@
-import React,{useState, useEffect, useContext} from 'react';
+import React,{useEffect, useState, useContext} from 'react';
+import {TimeContext} from '../context/context'
 import '../index.css';
-import {TimeContext} from '../context/context';
-import Home from '../assets/home.png';
 
-export default function Foto({src, id}){
-    const [,,time] = useContext(TimeContext)
-    const [ID, setId] = useState(id+2)
+export default function Foto({id}){
+    const [fadeProp, setFadeProp] = useState({fade: 'fade-in'})
+    const [, ,time, , , , ] = useContext(TimeContext);
     useEffect(() => {
-        // opacifyer();
-    }, [src])
+        console.log(id);
+    }, [id])
 
-    // function opacifyer(){
-    //     for(var i=0; i=time; i+time/4){
-    //         console.log(i, 'from pic');
-    //     }
-    // }
+    function setIn(){
+        setFadeProp({fade:'fade-in'})
+    }
+
+    function setOut(){
+        setFadeProp({fade:'fade-out'})
+    }
+
+    // para time = 7
+    useEffect(() => {
+        setIn() // 2 seg / F-IN / x CSS
+        setTimeout(()=>{
+            setOut()
+        },(time-1500)) // en 3 seg de Perma
+        setIn()
+   }, [id])
 
     return(
-        <div className="layered-image">
-            <img src={(`../assets/id${id}.png`)} height="50%" width="90%"/>
+        <div className={fadeProp.fade}>
+            <img src={(`../assets/${id}a.jpg`)} height="50%" width="90%"/>
         </div>
     )
 }

@@ -111,12 +111,12 @@ body {
 
 /* TEXTO */
 .fade-in {
-  transition: opacity 2.2s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity 1.5s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 .layered-image {

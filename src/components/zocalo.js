@@ -1,9 +1,9 @@
 import React,{useState, useContext, useEffect} from 'react';
 import '../index.css';
-import {TimeContext} from '../context/context'
+import {TimeContext} from '../context/context';
 
 export default function Zocalo(props){
-    const [addTime,lessTime,time, pausa, pauser, tiempo, timer] = useContext(TimeContext);
+    const [, ,time, , , , ] = useContext(TimeContext);
     
     const [fadeProp, setFadeProp] = useState({fade: 'fade-in'})
     useEffect(()=>{

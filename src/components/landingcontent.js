@@ -4,35 +4,9 @@ import '../index.css';
 import { Jumbotron, Container } from 'reactstrap';
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom';
-import { getFirestore } from '../firestore'
 import {BsCollectionPlay} from 'react-icons/bs';
 
 export default function Content(props){    
-    const [data, setData] = useState([]);
-    const [visitas, setVisitas] = useState(0);
-
-    useEffect(()=> {
-        const db = getFirestore();
-        const data = db.collection("visitas").limit(1);
-        // 2do: aca deberia ser un random + no hay estado 
-
-        data
-        .get()
-        .then((snapshot) => {
-          const data = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          setVisitas(data[0].cantidad);
-          console.log(visitas);
-        })
-        .then(
-            db.collection('visitas').doc('8dG89A2PQ5MxoDNZZZwr').update({
-                cantidad: visitas
-            })
-        );
-        
-    },[])
 
     return(
             <div>

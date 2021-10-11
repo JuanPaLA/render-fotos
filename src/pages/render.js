@@ -9,7 +9,7 @@ import {TimeContext} from '../context/context';
 
 
 function FotoRender() {
-const [fotos, setFotos] = useState([
+const [fotos, ] = useState([
   {id:1 , src: '../assets/1.jpg', texto: "HORA 1: Te miro - sos el soporte", hue: '#230E21 '},
   {id:2 , src: '../assets/2.jpg', texto: "HORA 2: Estoy dispuesta - sos prometedor", hue: '#8C7283 '},
   {id:3 , src: '../assets/3.jpg', texto: "HORA 3: Te pruebo - sos la materia", hue: '#230E21 '},
@@ -36,7 +36,7 @@ const [fotos, setFotos] = useState([
   {id:24 , src: '../assets/24.jpg', texto: "HORA 24: Te organizo - no te entiendo, tenés voluntad propia.", hue: '#8C7283 '}
 ])
 const [id, setId] = useState(1)
-const [src, setSrc] = useState()
+const [src, ] = useState()
 const [texto, setTexto] = useState()
 const [,,time,pausa] = useContext(TimeContext)
 
@@ -55,7 +55,7 @@ function interval() {
 }
 
 useEffect(() => {
-    console.log(pausa)
+    console.log(pausa, id)
     interval()
     return () => clearInterval(interval);
 }, [id, pausa])
